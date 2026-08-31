@@ -1,6 +1,6 @@
 {
   "type": "create:item_application",
-  "target": "#c:stripped_logs",
+  "target": "create:brass_casing",
   "ingredient": "gravis_stuff:gravis_alloy",
   "results": [
     {
