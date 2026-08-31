@@ -4,11 +4,18 @@
   "processing_time": 350,
   "results": [
     {
-      "count": 2,
       "id": "gravis_stuff:polvo_de_toba"
     },
     {
       "chance": 0.5,
+      "id": "gravis_stuff:polvo_de_toba"
+    },
+    {
+      "chance": 0.25,
+      "id": "gravis_stuff:polvo_de_toba"
+    },
+    {
+      "chance": 0.01,
       "id": "gravis_stuff:polvo_de_toba"
     },
     {
