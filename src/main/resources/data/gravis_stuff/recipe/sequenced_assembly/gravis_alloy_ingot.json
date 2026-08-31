@@ -4,7 +4,9 @@
   "transitional_item": {
     "id": "gravis_stuff:gravis_alloy"
   },
-  "loops": 1,
+  "result": {
+    "id": "gravis_stuff:gravis_alloy_ingot"
+  },
   "sequence": [
     {
       "type": "create:filling",
@@ -14,9 +16,7 @@
         "amount": 20250,
         "fluid": "minecraft:water"
       },
-      "results": [
-        "$result"
-      ]
+      "result": "$result"
     },
     {
       "type": "create:pressing",
@@ -33,9 +33,7 @@
         "amount": 20250,
         "fluid": "minecraft:water"
       },
-      "results": [
-        "$result"
-      ]
+      "result": "$result"
     },
     {
       "type": "create:pressing",
@@ -43,12 +41,6 @@
       "results": [
         "$result"
       ]
-    }
-  ],
-  "results": [
-    {
-      "chance": 1.0,
-      "id": "gravis_stuff:gravis_alloy_ingot"
     }
   ]
 }
