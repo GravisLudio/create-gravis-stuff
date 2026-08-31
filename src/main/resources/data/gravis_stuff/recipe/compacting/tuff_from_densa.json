@@ -1,0 +1,17 @@
+{
+  "type": "create:compacting",
+  "heat_requirement": "heated",
+  "ingredients": [
+    "gravis_stuff:masa_de_toba_densa"
+  ],
+  "results": [
+    {
+      "chance": 0.99,
+      "id": "minecraft:tuff"
+    },
+    {
+      "chance": 0.01,
+      "id": "gravis_stuff:masa_de_toba_fria"
+    }
+  ]
+}

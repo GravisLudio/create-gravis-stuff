@@ -1,0 +1,16 @@
+{
+  "type": "create:compacting",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    "gravis_stuff:masa_de_toba"
+  ],
+  "results": [
+    {
+      "id": "gravis_stuff:masa_de_toba_densa"
+    },
+    {
+      "chance": 0.1,
+      "id": "gravis_stuff:pedazo_de_masa_de_toba"
+    }
+  ]
+}

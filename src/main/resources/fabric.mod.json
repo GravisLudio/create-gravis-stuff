@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "gravis_stuff",
+  "version": "1.0.0",
+  "name": "Create: Gravis Stuff",
+  "description": "Geological synthesis, volcanic materials, and heavy industrial automation for Create!",
+  "authors": [
+    "GravisLudio",
+    "Kik",
+    "HiddenSage"
+  ],
+  "contact": {
+    "sources": "https://github.com/GravisLudio/create-gravis-stuff"
+  },
+  "license": "MIT",
+  "icon": "assets/gravis_stuff/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.gravis.stuff.GravisStuffMod"
+    ],
+    "client": [
+      "net.gravis.stuff.GravisStuffClientMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": ">=1.20",
+    "create": "*"
+  }
+}

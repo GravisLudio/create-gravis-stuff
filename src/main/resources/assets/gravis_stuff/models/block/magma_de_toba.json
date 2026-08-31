@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "gravis_stuff:block/magma_de_toba"
+  }
+}

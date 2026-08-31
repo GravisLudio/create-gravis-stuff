@@ -1,0 +1,22 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    "minecraft:netherite_ingot",
+    "gravis_stuff:polvo_de_toba",
+    "gravis_stuff:polvo_de_toba"
+  ],
+  "fluid_ingredients": [
+    {
+      "type": "fluid_stack",
+      "amount": 8100,
+      "fluid": "gravis_stuff:volcanic_tar"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "id": "gravis_stuff:gravis_alloy"
+    }
+  ]
+}

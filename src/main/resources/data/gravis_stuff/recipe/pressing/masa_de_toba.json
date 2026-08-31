@@ -1,0 +1,14 @@
+{
+  "type": "create:pressing",
+  "ingredient": "gravis_stuff:magma_de_toba",
+  "results": [
+    {
+      "chance": 0.98,
+      "id": "gravis_stuff:masa_de_toba"
+    },
+    {
+      "chance": 0.02,
+      "id": "gravis_stuff:masa_de_toba_fria"
+    }
+  ]
+}

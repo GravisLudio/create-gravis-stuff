@@ -1,0 +1,13 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    "gravis_stuff:pedazo_de_masa_de_toba"
+  ],
+  "fluid_results": [
+    {
+      "amount": 8100,
+      "id": "gravis_stuff:volcanic_tar"
+    }
+  ]
+}
