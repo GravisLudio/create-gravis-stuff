@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": "gravis_stuff:gravis_alloy_nugget"
+  },
+  "result": {
+    "count": 1,
+    "id": "gravis_stuff:gravis_alloy_ingot"
+  }
+}

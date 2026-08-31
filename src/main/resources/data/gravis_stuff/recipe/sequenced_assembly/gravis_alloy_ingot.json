@@ -1,0 +1,54 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": "gravis_stuff:gravis_alloy",
+  "transitional_item": {
+    "id": "gravis_stuff:gravis_alloy"
+  },
+  "loops": 1,
+  "sequence": [
+    {
+      "type": "create:filling",
+      "ingredient": "$ingredient",
+      "fluid_ingredient": {
+        "type": "fluid_stack",
+        "amount": 20250,
+        "fluid": "minecraft:water"
+      },
+      "results": [
+        "$result"
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredient": "$ingredient",
+      "results": [
+        "$result"
+      ]
+    },
+    {
+      "type": "create:filling",
+      "ingredient": "$ingredient",
+      "fluid_ingredient": {
+        "type": "fluid_stack",
+        "amount": 20250,
+        "fluid": "minecraft:water"
+      },
+      "results": [
+        "$result"
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredient": "$ingredient",
+      "results": [
+        "$result"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "chance": 1.0,
+      "id": "gravis_stuff:gravis_alloy_ingot"
+    }
+  ]
+}
