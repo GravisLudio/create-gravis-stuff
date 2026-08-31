@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "gravis_stuff:gravis_alloy",
+    "#c:stripped_logs"
+  ],
+  "result": {
+    "count": 1,
+    "id": "gravis_stuff:gravis_casing"
+  }
+}
