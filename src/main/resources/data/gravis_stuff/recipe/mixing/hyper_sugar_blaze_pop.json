@@ -1,0 +1,23 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    "minecraft:blaze_rod",
+    "minecraft:sugar",
+    "minecraft:sugar",
+    "gravis_stuff:polvo_de_toba"
+  ],
+  "fluid_ingredients": [
+    {
+      "type": "fluid_stack",
+      "amount": 8100,
+      "fluid": "gravis_stuff:volcanic_tar"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "id": "gravis_stuff:hyper_sugar_blaze_pop"
+    }
+  ]
+}
