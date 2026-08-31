@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "gravis_stuff:volcanic_tar_bucket",
-    "gravis_stuff:pedazo_de_masa_de_toba"
+    "gravis_stuff:pedazo_de_masa_de_toba",
+    "gravis_stuff:gravis_alloy_ingot",
+    "gravis_stuff:gravis_alloy"
   ]
 }
