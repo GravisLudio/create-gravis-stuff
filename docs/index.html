@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wiki Oficial | Create: Gravis Stuff</title>
+    <title>Planificador & Wiki | Create: Gravis Stuff</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=JetBrains+Mono:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #0f1115;
-            --bg-card: #181b22;
-            --bg-card-hover: #222631;
-            --border-color: #2e3444;
+            --bg-dark: #0b0d11;
+            --bg-card: #151820;
+            --bg-card-hover: #1e222d;
+            --border-color: #292f3d;
             --primary-amber: #e67e22;
-            --plasma-blue: #00d2d3;
-            --plasma-glow: rgba(0, 210, 211, 0.4);
+            --plasma-green: #2ecc71;
+            --plasma-glow: rgba(46, 204, 113, 0.35);
+            --soul-blue: #00d2d3;
             --tuff-grey: #57564f;
             --text-main: #f1f2f6;
             --text-muted: #95a5a6;
@@ -21,6 +22,7 @@
             --warning: #f1c40f;
             --danger: #e74c3c;
             --brass: #e1b12c;
+            --gravis-dark: #23272e;
         }
 
         * {
@@ -37,7 +39,6 @@
             overflow-x: hidden;
         }
 
-        /* Ambient Glow */
         body::before {
             content: '';
             position: fixed;
@@ -45,15 +46,15 @@
             left: 50%;
             transform: translateX(-50%);
             width: 80vw;
-            height: 400px;
-            background: radial-gradient(circle, rgba(230, 126, 34, 0.12) 0%, rgba(0, 210, 211, 0.05) 50%, transparent 70%);
+            height: 450px;
+            background: radial-gradient(circle, rgba(230, 126, 34, 0.12) 0%, rgba(46, 204, 113, 0.08) 50%, transparent 70%);
             z-index: -1;
             pointer-events: none;
         }
 
         header {
             border-bottom: 1px solid var(--border-color);
-            background: rgba(15, 17, 21, 0.85);
+            background: rgba(11, 13, 17, 0.85);
             backdrop-filter: blur(16px);
             position: sticky;
             top: 0;
@@ -122,116 +123,85 @@
         }
 
         .nav-btn.active {
-            border-color: var(--primary-amber);
-            color: var(--primary-amber);
+            color: var(--plasma-green);
+            border-color: rgba(46, 204, 113, 0.4);
+            box-shadow: 0 0 15px rgba(46, 204, 113, 0.1);
         }
 
         main {
-            max-width: 1300px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem;
         }
 
-        /* Hero Banner */
         .hero {
-            background: linear-gradient(180deg, rgba(24, 27, 34, 0.8) 0%, rgba(15, 17, 21, 0.9) 100%);
+            text-align: center;
+            margin-bottom: 3.5rem;
+            padding: 2rem;
+            background: linear-gradient(180deg, rgba(21, 24, 32, 0.8) 0%, rgba(11, 13, 17, 0.4) 100%);
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            padding: 2.5rem;
-            margin-bottom: 2.5rem;
             position: relative;
             overflow: hidden;
         }
 
-        .hero::after {
-            content: '⚙️';
-            position: absolute;
-            right: -20px;
-            bottom: -30px;
-            font-size: 10rem;
-            opacity: 0.04;
-            pointer-events: none;
-        }
-
         .hero h2 {
-            font-family: 'Cinzel', serif;
-            font-size: 2.2rem;
+            font-size: 2.3rem;
+            font-weight: 800;
             margin-bottom: 0.8rem;
-            background: linear-gradient(90deg, #fff, #bdc3c7);
+            background: linear-gradient(135deg, #fff 0%, #dcdde1 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hero p {
             color: var(--text-muted);
-            max-width: 800px;
             font-size: 1.05rem;
-            margin-bottom: 1.5rem;
+            max-width: 750px;
+            margin: 0 auto 1.5rem auto;
         }
 
-        .stats-grid {
-            display: grid;
-            grid-cols: 4;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
         }
 
-        .stat-card {
-            background: var(--bg-dark);
+        .stat-item {
+            background: rgba(11, 13, 17, 0.6);
             border: 1px solid var(--border-color);
-            padding: 1rem 1.2rem;
-            border-radius: 10px;
-        }
-
-        .stat-card .num {
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
             font-family: 'JetBrains Mono', monospace;
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--primary-amber);
         }
 
-        .stat-card .label {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        .stat-item strong {
+            color: var(--plasma-green);
         }
 
-        /* Section Layout */
         .section-header {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            margin-bottom: 1.5rem;
+            align-items: center;
+            margin-bottom: 1.8rem;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 0.8rem;
         }
 
         .section-header h3 {
-            font-family: 'Cinzel', serif;
             font-size: 1.5rem;
+            font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 0.8rem;
+            gap: 0.6rem;
         }
 
-        .status-badge {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            text-transform: uppercase;
-        }
-
-        .badge-done { background: rgba(46, 204, 113, 0.15); color: var(--success); border: 1px solid rgba(46, 204, 113, 0.3); }
-        .badge-progress { background: rgba(241, 196, 15, 0.15); color: var(--warning); border: 1px solid rgba(241, 196, 15, 0.3); }
-        .badge-plan { background: rgba(0, 210, 211, 0.15); color: var(--plasma-blue); border: 1px solid rgba(0, 210, 211, 0.3); }
-
-        /* Grid Cards */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 1.5rem;
             margin-bottom: 3rem;
         }
@@ -243,131 +213,97 @@
             padding: 1.5rem;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.2s ease, border-color 0.2s ease;
+            gap: 1rem;
+            transition: all 0.2s ease;
         }
 
         .wiki-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--primary-amber);
+            transform: translateY(-3px);
             background: var(--bg-card-hover);
+            border-color: rgba(230, 126, 34, 0.4);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
 
         .card-top {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 1rem;
         }
 
         .card-title-group h4 {
             font-size: 1.15rem;
+            font-weight: 700;
             color: #fff;
-            margin-bottom: 0.2rem;
         }
 
         .card-title-group span {
-            font-family: 'JetBrains Mono', monospace;
             font-size: 0.75rem;
-            color: var(--primary-amber);
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-muted);
+        }
+
+        .status-badge {
+            font-size: 0.7rem;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            text-transform: uppercase;
+        }
+
+        .badge-done {
+            background: rgba(46, 204, 113, 0.15);
+            color: var(--success);
+            border: 1px solid rgba(46, 204, 113, 0.3);
+        }
+
+        .badge-progress {
+            background: rgba(241, 196, 15, 0.15);
+            color: var(--warning);
+            border: 1px solid rgba(241, 196, 15, 0.3);
+        }
+
+        .badge-danger {
+            background: rgba(231, 76, 60, 0.15);
+            color: var(--danger);
+            border: 1px solid rgba(231, 76, 60, 0.3);
         }
 
         .card-body {
-            color: var(--text-muted);
             font-size: 0.9rem;
-            margin-bottom: 1.2rem;
+            color: var(--text-muted);
+            line-height: 1.5;
         }
 
         .recipe-box {
-            background: #12141a;
-            border: 1px solid #232733;
+            background: rgba(11, 13, 17, 0.7);
+            border: 1px dashed var(--border-color);
             border-radius: 8px;
             padding: 0.8rem;
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.8rem;
-            color: #bdc3c7;
+            color: #dcdde1;
         }
 
-        .recipe-box .step-title {
-            color: var(--brass);
-            font-weight: 600;
-            margin-bottom: 0.4rem;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        .chance-tag {
-            color: var(--danger);
+        .step-title {
             font-weight: 700;
+            color: var(--primary-amber);
+            margin-bottom: 0.3rem;
+            font-size: 0.75rem;
         }
 
-        /* Flow Timeline */
         .flow-container {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 2rem;
+            border-radius: 12px;
+            padding: 1.8rem;
             margin-bottom: 3rem;
         }
 
-        .flow-step {
-            display: flex;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .flow-step:last-child {
-            margin-bottom: 0;
-        }
-
-        .flow-step::before {
-            content: '';
-            position: absolute;
-            left: 20px;
-            top: 40px;
-            bottom: -30px;
-            width: 2px;
-            background: var(--border-color);
-        }
-
-        .flow-step:last-child::before {
-            display: none;
-        }
-
-        .flow-icon {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background: var(--bg-dark);
-            border: 2px solid var(--primary-amber);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            z-index: 1;
-            flex-shrink: 0;
-        }
-
-        .flow-content {
-            background: #13161c;
-            border: 1px solid var(--border-color);
-            padding: 1.2rem 1.5rem;
-            border-radius: 10px;
-            flex-grow: 1;
-        }
-
-        .flow-content h5 {
-            font-size: 1.1rem;
-            color: #fff;
-            margin-bottom: 0.4rem;
-        }
-
         footer {
-            border-top: 1px solid var(--border-color);
-            padding: 2rem;
             text-align: center;
+            padding: 2.5rem 1rem;
+            border-top: 1px solid var(--border-color);
             color: var(--text-muted);
             font-size: 0.85rem;
         }
@@ -380,124 +316,130 @@
             <div class="logo-badge">G</div>
             <div class="logo-title">
                 <h1>CREATE: GRAVIS STUFF</h1>
-                <span>WIKI & ROADMAP OFICIAL • v1.0.0</span>
+                <span>PLANIFICADOR DE DESARROLLO & WIKI v1.2.0</span>
             </div>
         </div>
         <nav>
-            <button class="nav-btn active" onclick="showSection('progression')">🌋 Progresión Toba</button>
+            <button class="nav-btn active" onclick="showSection('geology')">🌋 Geología & Alquitrán</button>
             <button class="nav-btn" onclick="showSection('metallurgy')">🔩 Gravis Alloy</button>
-            <button class="nav-btn" onclick="showSection('hypercharge')">⚡ Tier 4 & Catástrofe</button>
-            <button class="nav-btn" onclick="showSection('roadmap')">📋 Checklist General</button>
+            <button class="nav-btn" onclick="showSection('tier4')">⚡ Tier 4 & Catástrofe</button>
+            <button class="nav-btn" onclick="showSection('roadmap')">📋 Roadmap Maestro</button>
         </nav>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <h2>Compendio Industrial de Gravis Stuff</h2>
-            <p>
-                Documentación interactiva, balance termodinámico, recetas secuenciales y hoja de ruta viva para la expansión de energía extrema y metalurgia pesada de Create.
-            </p>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="num">5,077</div>
-                    <div class="label">Líneas de Código</div>
-                </div>
-                <div class="stat-card">
-                    <div class="num">4</div>
-                    <div class="label">Fases Geológicas</div>
-                </div>
-                <div class="stat-card">
-                    <div class="num">49,152 SU</div>
-                    <div class="label">Potencia Tier 4</div>
-                </div>
-                <div class="stat-card">
-                    <div class="num">1.0.0</div>
-                    <div class="label">Versión Publicable</div>
-                </div>
+        <div class="hero">
+            <h2>Planificador Técnico de Automatización e Industria Pesada</h2>
+            <p>Documentación viva, recetas cinéticas de Create, bucles de sintetización geotérmica y mecánicas de sobrepresión extrema.</p>
+            <div class="stats-bar">
+                <div class="stat-item">Versión Activa: <strong>v1.1.5 Standalone</strong></div>
+                <div class="stat-item">Potencia Tier 4: <strong>589,824 SU (Lvl 36)</strong></div>
+                <div class="stat-item">Combustible Definitivo: <strong>Hyper-Sugar Blaze Pop</strong></div>
+                <div class="stat-item">Seguridad: <strong>Gravis Fluid Tank (Anti-Meltdown)</strong></div>
             </div>
-        </section>
+        </div>
 
-        <!-- SECCIÓN 1: PROGRESIÓN TOBA Y ALQUITRÁN -->
-        <div id="progression" class="tab-content">
+        <!-- SECCIÓN 1: GEOLOGÍA Y ALQUITRÁN -->
+        <div id="geology" class="tab-content">
             <div class="section-header">
-                <h3>🌋 Síntesis Geológica y Alquitrán Volcánico</h3>
-                <span class="status-badge badge-done">Completado e Implementado</span>
+                <h3>🌋 Bucle de Síntesis Geológica y Alquitrán Volcánico</h3>
+                <span class="status-badge badge-done">Completado / En Juego</span>
             </div>
 
-            <div class="flow-container">
-                <div class="flow-step">
-                    <div class="flow-icon">🥣</div>
-                    <div class="flow-content">
-                        <h5>Fase 1: Magma de Toba (Heated Mixing)</h5>
-                        <p class="card-body">Fusión de las 3 rocas ígneas fundamentales con lava a temperatura de hoguera.</p>
-                        <div class="recipe-box">
-                            <div class="step-title">⚙️ MEZCLADOR MECÁNICO (Basin + Hoguera / Calor Normal)</div>
-                            • Entrada: 1x Granito + 1x Andesita + 1x Diorita + 1 Cubo de Lava (1000mB)<br>
-                            • Salida: <strong>1x Magma de Toba</strong> (Bloque animado)
+            <div class="cards-grid">
+                <div class="wiki-card">
+                    <div class="card-top">
+                        <div class="card-title-group">
+                            <h4>Magma de Toba</h4>
+                            <span>gravis_stuff:magma_de_toba</span>
                         </div>
+                        <span class="status-badge badge-done">Implementado</span>
+                    </div>
+                    <p class="card-body">
+                        Compuesto ígneo primario. Se obtiene fusionando las tres rocas plutónicas básicas con lava ardiente en un mezclador mecánico.
+                    </p>
+                    <div class="recipe-box">
+                        <div class="step-title">⚙️ CREATE MIXING (Heated 🟠)</div>
+                        • 1x Granito + 1x Diorita + 1x Andesita<br>
+                        • + 1x Balde de Lava ➔ <strong>1x Magma de Toba</strong>
                     </div>
                 </div>
 
-                <div class="flow-step">
-                    <div class="flow-icon">🔨</div>
-                    <div class="flow-content">
-                        <h5>Fase 2: Masa de Toba (1ª Compacting / Prensado)</h5>
-                        <p class="card-body">Primer prensado mecánico. La lava se enfría formando una corteza basáltica con gotas animadas.</p>
-                        <div class="recipe-box">
-                            <div class="step-title">⚙️ PRENSA MECÁNICA (Depot / Belt)</div>
-                            • Entrada: 1x Magma de Toba<br>
-                            • Salida: <span style="color:var(--success)">98% Masa de Toba</span> | <span class="chance-tag">2% Masa de Toba Fría (Fallo)</span>
+                <div class="wiki-card">
+                    <div class="card-top">
+                        <div class="card-title-group">
+                            <h4>Masa de Toba & Masa Fría</h4>
+                            <span>gravis_stuff:masa_de_toba</span>
                         </div>
+                        <span class="status-badge badge-done">Implementado</span>
+                    </div>
+                    <p class="card-body">
+                        Al prensar el Magma de Toba, se consolida la masa con un 2% de impureza residual (Masa de Toba Fría).
+                    </p>
+                    <div class="recipe-box">
+                        <div class="step-title">⚙️ MECHANICAL PRESS</div>
+                        • 1x Magma de Toba ➔ <strong>98% Masa de Toba</strong> / 2% Masa Fría
                     </div>
                 </div>
 
-                <div class="flow-step">
-                    <div class="flow-icon">🔥</div>
-                    <div class="flow-content">
-                        <h5>Fase 3: Masa Densa + Residuo Volcánico (Prensa con Fuego Azul)</h5>
-                        <p class="card-body">Compresión extrema en Basin bajo fuego azul. Se extrae el residuo rico en hidrocarburo.</p>
-                        <div class="recipe-box">
-                            <div class="step-title">⚙️ PRENSA MECÁNICA (Basin + Blaze Burner Superheated)</div>
-                            • Entrada: 1x Masa de Toba<br>
-                            • Salida: <strong>100% Masa de Toba Densa</strong> + <span style="color:var(--warning)">10% Pedazo de Masa de Toba</span>
+                <div class="wiki-card">
+                    <div class="card-top">
+                        <div class="card-title-group">
+                            <h4>Masa de Toba Densa & Pedazo</h4>
+                            <span>gravis_stuff:pedazo_de_masa_de_toba</span>
                         </div>
+                        <span class="status-badge badge-done">Implementado</span>
+                    </div>
+                    <p class="card-body">
+                        Prensado de alta temperatura en Fuego Azul. Exprime el componente volátil generando el <strong>Pedazo de Masa de Toba (10%)</strong>.
+                    </p>
+                    <div class="recipe-box">
+                        <div class="step-title">⚙️ COMPACTING (Superheated 🔵)</div>
+                        • 1x Masa de Toba ➔ <strong>Masa Densa + 10% Pedazo de Masa</strong>
                     </div>
                 </div>
 
-                <div class="flow-step">
-                    <div class="flow-icon">🛢️</div>
-                    <div class="flow-content">
-                        <h5>Fase 4: Alquitrán Volcánico Líquido (Fundición de Residuo)</h5>
-                        <p class="card-body">El mezclador licúa el pedazo volcánico en combustible líquido continuo para alimentar los Blaze Burners.</p>
-                        <div class="recipe-box">
-                            <div class="step-title">⚙️ MEZCLADOR MECÁNICO (Basin + Calor)</div>
-                            • Entrada: 1x Pedazo de Masa de Toba<br>
-                            • Salida: <strong>100 mB de Alquitrán Volcánico Líquido</strong> (8,100 droplets)
+                <div class="wiki-card">
+                    <div class="card-top">
+                        <div class="card-title-group">
+                            <h4>Alquitrán Volcánico (Líquido)</h4>
+                            <span>gravis_stuff:volcanic_tar</span>
                         </div>
+                        <span class="status-badge badge-done">Implementado</span>
+                    </div>
+                    <p class="card-body">
+                        Fluido hidrocarburo denso y viscoso. Es el combustible automatizado de <strong>Fuego Azul (Superheated)</strong> para quemadores Create.
+                    </p>
+                    <div class="recipe-box">
+                        <div class="step-title">⚙️ CREATE MIXING (Heated 🟠)</div>
+                        • 1x Pedazo de Masa de Toba ➔ <strong>100mB Alquitrán Volcánico</strong>
                     </div>
                 </div>
 
-                <div class="flow-step">
-                    <div class="flow-icon">🏆</div>
-                    <div class="flow-content">
-                        <h5>Fase 5: Toba Volcánica Definitiva (Consolidación)</h5>
-                        <p class="card-body">Prensado final con calor para solidificar la roca mineral definitiva de Minecraft.</p>
-                        <div class="recipe-box">
-                            <div class="step-title">⚙️ PRENSA MECÁNICA (Basin + Calor)</div>
-                            • Entrada: 1x Masa de Toba Densa<br>
-                            • Salida: <span style="color:var(--success)">99% Toba (minecraft:tuff)</span> | <span class="chance-tag">1% Masa de Toba Fría (Fractura)</span>
+                <div class="wiki-card">
+                    <div class="card-top">
+                        <div class="card-title-group">
+                            <h4>Toba Sintética</h4>
+                            <span>gravis_stuff:toba_sintetica</span>
                         </div>
+                        <span class="status-badge badge-done">Implementado</span>
+                    </div>
+                    <p class="card-body">
+                        Bloque final libre de impurezas. Al triturarse en las Ruedas Trituradoras, produce el <strong>Polvo de Toba</strong>.
+                    </p>
+                    <div class="recipe-box">
+                        <div class="step-title">⚙️ COMPACTING (Heated 🟠)</div>
+                        • 1x Masa Densa ➔ <strong>99% Toba Sintética</strong> / 1% Masa Fría
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- SECCIÓN 2: GRAVIS ALLOY -->
+        <!-- SECCIÓN 2: METALURGIA GRAVIS -->
         <div id="metallurgy" class="tab-content" style="display:none;">
             <div class="section-header">
-                <h3>🔩 Metalurgia: Línea de Forja de Gravis Alloy</h3>
-                <span class="status-badge badge-progress">En Desarrollo / Próxima Fase</span>
+                <h3>🔩 Metalurgia de Aleación Gravis</h3>
+                <span class="status-badge badge-done">Completado / En Juego</span>
             </div>
 
             <div class="cards-grid">
@@ -510,157 +452,143 @@
                         <span class="status-badge badge-done">Implementado</span>
                     </div>
                     <p class="card-body">
-                        Polvo mineral refractario obtenido al pulverizar los bloques de Toba en las Ruedas Trituradoras de Create.
+                        Mineral refractario obtenido de la Toba Sintética en Crushing Wheels o Millstone.
                     </p>
                     <div class="recipe-box">
                         <div class="step-title">⚙️ CRUSHING WHEELS</div>
-                        • Entrada: 1x Toba (Tuff)<br>
-                        • Salida: 2-3x Polvo de Toba
+                        • 1x Toba Sintética ➔ <strong>1-4x Polvo de Toba</strong>
                     </div>
                 </div>
 
                 <div class="wiki-card">
                     <div class="card-top">
                         <div class="card-title-group">
-                            <h4>Gravis Alloy</h4>
+                            <h4>Aleación Gravis (Bruta)</h4>
                             <span>gravis_stuff:gravis_alloy</span>
                         </div>
                         <span class="status-badge badge-done">Implementado</span>
                     </div>
                     <p class="card-body">
-                        Compuesto base de aleación. Se aplica directamente con <strong>clic derecho sobre troncos sin corteza</strong> para forjar <strong>Gravis Casings</strong>.
+                        Compuesto metálico base. Se aplica con clic derecho sobre <strong>Brass Casings</strong> para forjar <strong>Gravis Casings</strong>.
                     </p>
                     <div class="recipe-box">
-                        <div class="step-title">⚙️ MEZCLADOR FUEGO AZUL</div>
-                        • 1x Netherita + 2x Polvo de Toba + 200mB Alquitrán Volcánico ➔ <strong>1x Gravis Alloy</strong>
+                        <div class="step-title">⚙️ MEZCLADOR FUEGO AZUL (Superheated 🔵)</div>
+                        • 1x Netherita + 2x Polvo de Toba + 100mB Alquitrán ➔ <strong>2x Gravis Alloy</strong>
                     </div>
                 </div>
 
                 <div class="wiki-card">
                     <div class="card-top">
                         <div class="card-title-group">
-                            <h4>Gravis Alloy Ingot</h4>
+                            <h4>Lingote de Aleación Gravis</h4>
                             <span>gravis_stuff:gravis_alloy_ingot</span>
                         </div>
-                        <span class="status-badge badge-progress">Diseño</span>
+                        <span class="status-badge badge-done">Implementado</span>
                     </div>
                     <p class="card-body">
-                        El lingote refinado y templado en la línea de montaje continua. Se usa para Beacons, armaduras/herramientas y pepitas.
+                        Lingote forjado en línea de templado industrial continua (Lava ➔ Prensa ➔ Agua ➔ Prensa).
                     </p>
                     <div class="recipe-box">
-                        <div class="step-title">⚙️ SEQUENCED ASSEMBLY (Cinta)</div>
-                        • Gravis Alloy ➔ Spout (Agua) ➔ Prensa ➔ Spout (Agua) ➔ <strong>Lingote Templado</strong>
+                        <div class="step-title">⚙️ SEQUENCED ASSEMBLY (Cinta Transportadora)</div>
+                        • Gravis Alloy ➔ Spout (Lava) ➔ Prensa ➔ Spout (Agua) ➔ Prensa ➔ <strong>Lingote</strong>
                     </div>
                 </div>
 
                 <div class="wiki-card">
                     <div class="card-top">
                         <div class="card-title-group">
-                            <h4>Gravis Alloy Nugget</h4>
-                            <span>gravis_stuff:gravis_alloy_nugget</span>
-                        </div>
-                        <span class="status-badge badge-done">Implementado</span>
-                    </div>
-                    <p class="card-body">
-                        Pepita metálica hiperdensa. Es el catalizador térmico requerido para fabricar el <strong>Blaze Candy</strong>.
-                    </p>
-                    <div class="recipe-box">
-                        <div class="step-title">⚙️ MESA DE CRAFTEO</div>
-                        • 1x Gravis Ingot ➔ 9x Gravis Nuggets
-                    </div>
-                </div>
-                <div class="wiki-card">
-                    <div class="card-top">
-                        <div class="card-title-group">
-                            <h4>Bloque de Gravis Alloy</h4>
-                            <span>gravis_stuff:gravis_alloy_block</span>
-                        </div>
-                        <span class="status-badge badge-done">Implementado</span>
-                    </div>
-                    <p class="card-body">
-                        Bloque macizo reforzado con remaches. Sirve como base de poder para <strong>Faros Mágicos (Beacons)</strong> y blindaje industrial.
-                    </p>
-                    <div class="recipe-box">
-                        <div class="step-title">⚙️ MESA DE CRAFTEO (3x3)</div>
-                        • 9x Aleación Gravis ➔ <strong>1x Bloque de Aleación Gravis</strong>
-                    </div>
-                </div>
-                <div class="wiki-card">
-                    <div class="card-top">
-                        <div class="card-title-group">
-                            <h4>Gravis Casing (Carcasa)</h4>
+                            <h4>Gravis Casing (Carcasa Blindada)</h4>
                             <span>gravis_stuff:gravis_casing</span>
                         </div>
                         <span class="status-badge badge-done">Implementado</span>
                     </div>
                     <p class="card-body">
-                        Carcasa blindada de alta resistencia. Se crea al aplicar directamente <strong>Aleación Gravis</strong> sobre un <strong>Brass Casing</strong>.
+                        Carcasa blindada pesada con remaches de latón para maquinaria industrial avanzada.
                     </p>
                     <div class="recipe-box">
-                        <div class="step-title">⚙️ CREATE ITEM APPLICATION</div>
+                        <div class="step-title">⚙️ ITEM APPLICATION</div>
                         • Clic derecho con Aleación Gravis en Brass Casing ➔ <strong>1x Gravis Casing</strong>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- SECCIÓN 3: HYPERCHARGE Y CATÁSTROFE -->
-        <div id="hypercharge" class="tab-content" style="display:none;">
+        <!-- SECCIÓN 3: TIER 4 Y CATÁSTROFE -->
+        <div id="tier4" class="tab-content" style="display:none;">
             <div class="section-header">
-                <h3>⚡ Tier 4 de Energía: Sugared State y Peligro de Caldera</h3>
-                <span class="status-badge badge-plan">Planificado / Documentado</span>
+                <h3>⚡ Tier 4 de Energía: Happy Overloaded & Protocolo de Catástrofe</h3>
+                <span class="status-badge badge-progress">En Desarrollo / Fase 2</span>
             </div>
 
             <div class="cards-grid">
-                <div class="wiki-card">
+                <div class="wiki-card" style="border-color: rgba(46, 204, 113, 0.5);">
                     <div class="card-top">
                         <div class="card-title-group">
-                            <h4>Blaze Candy</h4>
-                            <span>gravis_stuff:blaze_candy</span>
+                            <h4 style="color:var(--plasma-green)">🍭 Hyper-Sugar Blaze Pop</h4>
+                            <span>gravis_stuff:hyper_sugar_blaze_pop</span>
                         </div>
-                        <span class="status-badge badge-plan">Planificado</span>
+                        <span class="status-badge badge-done">Implementado</span>
                     </div>
                     <p class="card-body">
-                        Caramelo de alta energía fabricado al límite de la física cinética. Desata el <strong>Sugared State</strong> en los quemadores.
+                        Paleta de hiper-azúcar con catalizador de toba y alquitrán. Desata el estado <strong>Happy Overloaded (Plasma Verde 🟢)</strong> en los quemadores.
                     </p>
                     <div class="recipe-box">
-                        <div class="step-title">⚙️ MEZCLADOR @ 256 RPM (Fuego Azul)</div>
-                        • 1x Blaze Cake + 1x Gravis Nugget + Lava Líquida inyectada ➔ <strong>1x Blaze Candy</strong>
+                        <div class="step-title">⚙️ MEZCLADOR FUEGO AZUL (Superheated 🔵)</div>
+                        • 1x Blaze Rod + 2x Azúcar + 1x Polvo de Toba + 100mB Alquitrán ➔ <strong>1x Hyper-Sugar Blaze Pop</strong>
                     </div>
                 </div>
 
-                <div class="wiki-card" style="border-color: rgba(0, 210, 211, 0.4);">
+                <div class="wiki-card" style="border-color: rgba(46, 204, 113, 0.4);">
                     <div class="card-top">
                         <div class="card-title-group">
-                            <h4 style="color:var(--plasma-blue)">Estado Azucarizado (Sugared State)</h4>
-                            <span>Fuego Blanco / Plasma</span>
+                            <h4 style="color:var(--plasma-green)">Estado Happy Overloaded</h4>
+                            <span>Plasma Verde / 4.0 Boiler Heat</span>
                         </div>
-                        <span class="status-badge badge-plan">3x Boost</span>
+                        <span class="status-badge badge-done">589,824 SU</span>
                     </div>
                     <p class="card-body">
-                        Los ojos del Blaze brillan en blanco plasma. Triplica la potencia de la caldera a <strong>49,152 SU por pistón</strong> durante <strong>5 minutos</strong>.
+                        La cabeza y varillas del Blaze brillan en <strong>Plasma Verde con Ojos Blancos Eléctricos</strong>. Cada quemador aporta <strong>4.0 de calor</strong>, overclockeando calderas a <strong>Nivel 36 (589,824 SU con 12 motores)</strong> durante <strong>5 minutos</strong>.
                     </p>
                     <div class="recipe-box">
-                        <div class="step-title">⚡ RENDIMIENTO INDUSTRIAL</div>
-                        • Duración: 300 segundos.<br>
-                        • Exige caudal masivo de agua por bombas de Create.
+                        <div class="step-title">⚡ RENDIMIENTO TÉRMICO</div>
+                        • Duración: 6,000 ticks (300 segundos).<br>
+                        • Exige suministro constante de agua para evitar colapso.
                     </div>
                 </div>
 
-                <div class="wiki-card" style="border-color: rgba(231, 76, 60, 0.4);">
+                <div class="wiki-card" style="border-color: rgba(231, 76, 60, 0.5);">
                     <div class="card-top">
                         <div class="card-title-group">
-                            <h4 style="color:var(--danger)">💥 Falla Catastrófica: Explosión</h4>
-                            <span>Peligro Industrial</span>
+                            <h4 style="color:var(--danger)">💥 Catástrofe: Colapso por Sobrepresión</h4>
+                            <span>Peligro Térmico</span>
                         </div>
-                        <span class="status-badge" style="color:var(--danger); background:rgba(231,76,60,0.1);">Riesgo Crítico</span>
+                        <span class="status-badge badge-danger">15s de Gracia</span>
                     </div>
                     <p class="card-body">
-                        Si la caldera se queda sin agua mientras está en fuego blanco, la sobrepresión genera un doble desastre:
+                        Si la caldera se queda sin agua mientras los quemadores están en Nivel 4:
                     </p>
                     <div class="recipe-box" style="color:#e74c3c;">
-                        • <strong>Caldera (Cañonazo Vertical):</strong> Destruye todos los bloques hacia arriba en línea recta.<br>
-                        • <strong>Tuberías (Metralla en Cadena):</strong> Revientan en efecto dominó con fuerza de TNT.
+                        • <strong>Fase 1 (Alarma 15s):</strong> Silbido estridente de vapor + Humo negro + Gafas en alerta crítica.<br>
+                        • <strong>Fase 2 (Cañonazo Vertical):</strong> Estalla hacia arriba destruyendo <code>3 x Altura</code> bloques en línea recta.<br>
+                        • <strong>Metralla de Tuberías:</strong> Las tuberías conectadas revientan con 25-50% de fuerza de TNT.
+                    </div>
+                </div>
+
+                <div class="wiki-card" style="border-color: rgba(230, 126, 34, 0.5);">
+                    <div class="card-top">
+                        <div class="card-title-group">
+                            <h4 style="color:var(--primary-amber)">🛡️ Tanques Blindados de Gravis</h4>
+                            <span>gravis_stuff:gravis_tank</span>
+                        </div>
+                        <span class="status-badge badge-progress">Próxima Fase</span>
+                    </div>
+                    <p class="card-body">
+                        Tanques de almacenamiento y caldera forjados con <strong>Láminas de Gravis</strong>. Son <strong>100% inmunes a la sobrepresión y explosiones</strong>, garantizando calderas seguras.
+                    </p>
+                    <div class="recipe-box">
+                        <div class="step-title">⚙️ FABRICACIÓN INDUSTRIAL</div>
+                        • Lingote Gravis en Prensa ➔ <strong>Lámina Gravis</strong><br>
+                        • Láminas Gravis + Cristal / Tanque ➔ <strong>Tanque Blindado Gravis</strong>
                     </div>
                 </div>
             </div>
@@ -674,24 +602,19 @@
             </div>
 
             <div class="flow-container">
-                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">
-                    Lista de tareas maestras para seguir la evolución del mod y sus actualizaciones:
-                </p>
                 <div style="display: flex; flex-direction: column; gap: 0.8rem; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;">
-                    <div>✅ <strong>v1.0.0:</strong> Creación de mod independiente <code>Create: Gravis Stuff</code>.</div>
-                    <div>✅ <strong>v1.0.0:</strong> Magma de Toba, Masa de Toba, Masa Fría (2%), Masa Densa.</div>
-                    <div>✅ <strong>v1.0.0:</strong> Pedazo de Masa de Toba (10% en Basin Superheated).</div>
-                    <div>✅ <strong>v1.0.0:</strong> Alquitrán Volcánico (Fluido con físicas, ralentización y combustión).</div>
-                    <div>✅ <strong>v1.0.0:</strong> Balde Animado de Alquitrán (9 frames).</div>
-                    <div>✅ <strong>v1.0.0:</strong> Gating de Toba y balance económico industrial.</div>
+                    <div style="color: var(--success);">✅ <strong>v1.0.0:</strong> Creación de mod independiente <code>Create: Gravis Stuff</code>.</div>
+                    <div style="color: var(--success);">✅ <strong>v1.0.0:</strong> Magma de Toba, Masa de Toba, Masa Fría (2%), Masa Densa.</div>
+                    <div style="color: var(--success);">✅ <strong>v1.0.0:</strong> Pedazo de Masa de Toba (10% en Basin Superheated) & Alquitrán Volcánico.</div>
+                    <div style="color: var(--success);">✅ <strong>v1.0.0:</strong> Balde Animado de Alquitrán y Modelo de Fluido en Mundo.</div>
                     <div style="color: var(--success);">✅ <strong>v1.1.0:</strong> Polvo de Toba en Crushing Wheels y Millstone.</div>
-                    <div style="color: var(--success);">✅ <strong>v1.1.0:</strong> Gravis Alloy y Gravis Alloy Nuggets (Superheated Mixing).</div>
-                    <div style="color: var(--success);">✅ <strong>v1.1.0:</strong> Bloque de Aleación Gravis (Compatible con Beacons / Faros).</div>
-                    <div style="color: var(--success);">✅ <strong>v1.1.0:</strong> Gravis Casing (Mejora de Brass Casing con Gravis Alloy).</div>
-                    <div style="color: var(--success);">✅ <strong>v1.1.0:</strong> Línea de Templado de Gravis Alloy Ingot en Cinta (Sequenced Assembly).</div>
-                    <div style="color: var(--warning);">🔄 <strong>v1.2.0:</strong> Tier 4 de Energía (Blaze Candy, Sugared State @ 49,152 SU).</div>
-                    <div style="color: var(--plasma-blue);">⏳ <strong>v1.2.0:</strong> Blaze Candy a 256 RPM y Sugared State (Fuego Blanco Plasma).</div>
-                    <div style="color: var(--danger);">⏳ <strong>v1.2.0:</strong> Sistema de explosión direccional y metralla de tuberías de vapor.</div>
+                    <div style="color: var(--success);">✅ <strong>v1.1.0:</strong> Gravis Alloy, Nuggets y Bloque de Aleación Gravis (Beacons).</div>
+                    <div style="color: var(--success);">✅ <strong>v1.1.0:</strong> Gravis Casing y Línea de Templado de Lingote en Cinta Transportadora.</div>
+                    <div style="color: var(--success);">✅ <strong>v1.2.0:</strong> 🍭 Hyper-Sugar Blaze Pop & Estado Happy Overloaded (Plasma Verde en Flywheel).</div>
+                    <div style="color: var(--success);">✅ <strong>v1.2.0:</strong> Calderas Overclockeadas a Nivel 36 (589,824 SU en vivo).</div>
+                    <div style="color: var(--warning);">🔄 <strong>v1.2.5:</strong> Sistema de Alarma de 15s y Catástrofe de Sobrepresión Vertical (3x Altura).</div>
+                    <div style="color: var(--warning);">🔄 <strong>v1.2.5:</strong> Láminas de Gravis y Tanques Blindados Gravis (Anti-Meltdown).</div>
+                    <div style="color: var(--text-muted);">⏳ <strong>v1.3.0:</strong> Maquinaria Pesada de Alto Consumo (Prensa Gravitacional e Hiper-Centrífuga).</div>
                 </div>
             </div>
         </div>
