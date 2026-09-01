@@ -1,0 +1,9 @@
+{
+  "type": "create:pressing",
+  "ingredient": "gravis_stuff:gravis_alloy_ingot",
+  "results": [
+    {
+      "id": "gravis_stuff:gravis_sheet"
+    }
+  ]
+}
