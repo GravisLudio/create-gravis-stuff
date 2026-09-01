@@ -29,14 +29,6 @@
     {
       "chance": 0.1,
       "id": "minecraft:copper_nugget"
-    },
-    {
-      "chance": 0.1,
-      "id": "create:zinc_nugget"
-    },
-    {
-      "chance": 0.1,
-      "id": "minecraft:iron_nugget"
     }
   ]
 }
