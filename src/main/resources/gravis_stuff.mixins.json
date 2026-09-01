@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "net.gravis.stuff.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "BlazeBurnerBlockEntityMixin",
+    "BoilerHeaterMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
