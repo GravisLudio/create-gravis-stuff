@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planificador & Wiki | Create: Gravis Stuff</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Wiki Oficial & Planificador | Create: Gravis Stuff</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=JetBrains+Mono:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -316,7 +319,7 @@
             <div class="logo-badge">G</div>
             <div class="logo-title">
                 <h1>CREATE: GRAVIS STUFF</h1>
-                <span>PLANIFICADOR DE DESARROLLO & WIKI v1.2.0</span>
+                <span>WIKI OFICIAL & GUÍA TÉCNICA v1.2.0</span>
             </div>
         </div>
         <nav>
@@ -329,10 +332,10 @@
 
     <main>
         <div class="hero">
-            <h2>Planificador Técnico de Automatización e Industria Pesada</h2>
-            <p>Documentación viva, recetas cinéticas de Create, bucles de sintetización geotérmica y mecánicas de sobrepresión extrema.</p>
+            <h2>Guía Técnica de Automatización e Industria Pesada</h2>
+            <p>Documentación completa, recetas mecánicas de Create, bucles de síntesis geotérmica, overclocking de calderas y protocolos de sobrepresión.</p>
             <div class="stats-bar">
-                <div class="stat-item">Versión Activa: <strong>v1.1.5 Standalone</strong></div>
+                <div class="stat-item">Versión: <strong>v1.2.0 Standalone</strong></div>
                 <div class="stat-item">Potencia Tier 4: <strong>589,824 SU (Lvl 36)</strong></div>
                 <div class="stat-item">Combustible Definitivo: <strong>Hyper-Sugar Blaze Pop</strong></div>
                 <div class="stat-item">Seguridad: <strong>Gravis Fluid Tank (Anti-Meltdown)</strong></div>
@@ -343,7 +346,7 @@
         <div id="geology" class="tab-content">
             <div class="section-header">
                 <h3>🌋 Bucle de Síntesis Geológica y Alquitrán Volcánico</h3>
-                <span class="status-badge badge-done">Completado / En Juego</span>
+                <span class="status-badge badge-done">Implementado</span>
             </div>
 
             <div class="cards-grid">
@@ -439,7 +442,7 @@
         <div id="metallurgy" class="tab-content" style="display:none;">
             <div class="section-header">
                 <h3>🔩 Metalurgia de Aleación Gravis</h3>
-                <span class="status-badge badge-done">Completado / En Juego</span>
+                <span class="status-badge badge-done">Implementado</span>
             </div>
 
             <div class="cards-grid">
@@ -469,7 +472,7 @@
                         <span class="status-badge badge-done">Implementado</span>
                     </div>
                     <p class="card-body">
-                        Compuesto metálico base. Se aplica con clic derecho sobre <strong>Brass Casings</strong> para forjar <strong>Gravis Casings</strong>.
+                        Compuesto metálico base. Se aplica con <strong>clic derecho sobre Brass Casings</strong> para transformarlos en <strong>Gravis Casings</strong>.
                     </p>
                     <div class="recipe-box">
                         <div class="step-title">⚙️ MEZCLADOR FUEGO AZUL (Superheated 🔵)</div>
@@ -486,11 +489,45 @@
                         <span class="status-badge badge-done">Implementado</span>
                     </div>
                     <p class="card-body">
-                        Lingote forjado en línea de templado industrial continua (Lava ➔ Prensa ➔ Agua ➔ Prensa).
+                        Lingote forjado en línea de templado industrial continua (Lava ➔ Prensa ➔ Agua ➔ Prensa). Sirve para láminas, pepitas y bloques de beacon.
                     </p>
                     <div class="recipe-box">
                         <div class="step-title">⚙️ SEQUENCED ASSEMBLY (Cinta Transportadora)</div>
                         • Gravis Alloy ➔ Spout (Lava) ➔ Prensa ➔ Spout (Agua) ➔ Prensa ➔ <strong>Lingote</strong>
+                    </div>
+                </div>
+
+                <div class="wiki-card">
+                    <div class="card-top">
+                        <div class="card-title-group">
+                            <h4>Pepita de Gravis Alloy</h4>
+                            <span>gravis_stuff:gravis_alloy_nugget</span>
+                        </div>
+                        <span class="status-badge badge-done">Implementado</span>
+                    </div>
+                    <p class="card-body">
+                        Pepita metálica densa obtenida descomponiendo lingotes o aleación bruta.
+                    </p>
+                    <div class="recipe-box">
+                        <div class="step-title">⚙️ MESA DE CRAFTEO</div>
+                        • 1x Lingote de Aleación Gravis ➔ <strong>9x Pepitas de Gravis</strong>
+                    </div>
+                </div>
+
+                <div class="wiki-card">
+                    <div class="card-top">
+                        <div class="card-title-group">
+                            <h4>Lámina de Gravis (Sheet)</h4>
+                            <span>gravis_stuff:gravis_sheet</span>
+                        </div>
+                        <span class="status-badge badge-done">Implementado</span>
+                    </div>
+                    <p class="card-body">
+                        Placa metálica blindada obtenida al prensar lingotes de aleación. Componente base para los tanques de fluidos a prueba de explosión.
+                    </p>
+                    <div class="recipe-box">
+                        <div class="step-title">⚙️ MECHANICAL PRESS</div>
+                        • 1x Lingote de Aleación Gravis ➔ <strong>1x Lámina de Gravis</strong>
                     </div>
                 </div>
 
@@ -510,6 +547,23 @@
                         • Clic derecho con Aleación Gravis en Brass Casing ➔ <strong>1x Gravis Casing</strong>
                     </div>
                 </div>
+
+                <div class="wiki-card">
+                    <div class="card-top">
+                        <div class="card-title-group">
+                            <h4>Bloque de Aleación Gravis</h4>
+                            <span>gravis_stuff:gravis_alloy_block</span>
+                        </div>
+                        <span class="status-badge badge-done">Implementado</span>
+                    </div>
+                    <p class="card-body">
+                        Bloque macizo reforzado con remaches. Es compatible como base para <strong>Faros Mágicos (Beacons)</strong>.
+                    </p>
+                    <div class="recipe-box">
+                        <div class="step-title">⚙️ MESA DE CRAFTEO (3x3)</div>
+                        • 9x Lingotes de Aleación Gravis ➔ <strong>1x Bloque de Gravis</strong>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -517,7 +571,7 @@
         <div id="tier4" class="tab-content" style="display:none;">
             <div class="section-header">
                 <h3>⚡ Tier 4 de Energía: Happy Overloaded & Protocolo de Catástrofe</h3>
-                <span class="status-badge badge-progress">En Desarrollo / Fase 2</span>
+                <span class="status-badge badge-done">Implementado</span>
             </div>
 
             <div class="cards-grid">
@@ -562,7 +616,7 @@
                             <h4 style="color:var(--danger)">💥 Catástrofe: Colapso por Sobrepresión</h4>
                             <span>Peligro Térmico</span>
                         </div>
-                        <span class="status-badge badge-danger">15s de Gracia</span>
+                        <span class="status-badge badge-done">15s de Gracia</span>
                     </div>
                     <p class="card-body">
                         Si la caldera se queda sin agua mientras los quemadores están en Nivel 4:
@@ -570,7 +624,7 @@
                     <div class="recipe-box" style="color:#e74c3c;">
                         • <strong>Fase 1 (Alarma 15s):</strong> Silbido estridente de vapor + Humo negro + Gafas en alerta crítica.<br>
                         • <strong>Fase 2 (Cañonazo Vertical):</strong> Estalla hacia arriba destruyendo <code>3 x Altura</code> bloques en línea recta.<br>
-                        • <strong>Metralla de Tuberías:</strong> Las tuberías conectadas revientan con 25-50% de fuerza de TNT.
+                        • <strong>Metralla de Tuberías:</strong> Las tuberías conectadas revientan con fuerza de metralla moderada.
                     </div>
                 </div>
 
@@ -580,15 +634,15 @@
                             <h4 style="color:var(--primary-amber)">🛡️ Tanques Blindados de Gravis</h4>
                             <span>gravis_stuff:gravis_tank</span>
                         </div>
-                        <span class="status-badge badge-progress">Próxima Fase</span>
+                        <span class="status-badge badge-done">Anti-Explosión</span>
                     </div>
                     <p class="card-body">
-                        Tanques de almacenamiento y caldera forjados con <strong>Láminas de Gravis</strong>. Son <strong>100% inmunes a la sobrepresión y explosiones</strong>, garantizando calderas seguras.
+                        Tanques de almacenamiento y caldera forjados con <strong>Láminas de Gravis</strong>. Son <strong>100% inmunes a la sobrepresión y explosiones</strong>, garantizando calderas completamente seguras.
                     </p>
                     <div class="recipe-box">
                         <div class="step-title">⚙️ FABRICACIÓN INDUSTRIAL</div>
                         • Lingote Gravis en Prensa ➔ <strong>Lámina Gravis</strong><br>
-                        • Láminas Gravis + Cristal / Tanque ➔ <strong>Tanque Blindado Gravis</strong>
+                        • 4x Láminas Gravis + 1x Cristal ➔ <strong>Tanque Blindado Gravis</strong>
                     </div>
                 </div>
             </div>
@@ -598,7 +652,7 @@
         <div id="roadmap" class="tab-content" style="display:none;">
             <div class="section-header">
                 <h3>📋 Hoja de Ruta de Desarrollo Viva</h3>
-                <span class="status-badge badge-progress">Actualizado</span>
+                <span class="status-badge badge-done">Al Día</span>
             </div>
 
             <div class="flow-container">
@@ -612,8 +666,8 @@
                     <div style="color: var(--success);">✅ <strong>v1.1.0:</strong> Gravis Casing y Línea de Templado de Lingote en Cinta Transportadora.</div>
                     <div style="color: var(--success);">✅ <strong>v1.2.0:</strong> 🍭 Hyper-Sugar Blaze Pop & Estado Happy Overloaded (Plasma Verde en Flywheel).</div>
                     <div style="color: var(--success);">✅ <strong>v1.2.0:</strong> Calderas Overclockeadas a Nivel 36 (589,824 SU en vivo).</div>
-                    <div style="color: var(--warning);">🔄 <strong>v1.2.5:</strong> Sistema de Alarma de 15s y Catástrofe de Sobrepresión Vertical (3x Altura).</div>
-                    <div style="color: var(--warning);">🔄 <strong>v1.2.5:</strong> Láminas de Gravis y Tanques Blindados Gravis (Anti-Meltdown).</div>
+                    <div style="color: var(--success);">✅ <strong>v1.2.0:</strong> Sistema de Alarma de 15s y Catástrofe de Sobrepresión Vertical (3x Altura).</div>
+                    <div style="color: var(--success);">✅ <strong>v1.2.0:</strong> Láminas de Gravis y Tanques Blindados Gravis (Anti-Meltdown).</div>
                     <div style="color: var(--text-muted);">⏳ <strong>v1.3.0:</strong> Maquinaria Pesada de Alto Consumo (Prensa Gravitacional e Hiper-Centrífuga).</div>
                 </div>
             </div>
