@@ -4,10 +4,12 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "BlazeBurnerBlockEntityMixin",
-    "BoilerDataMixin"
+    "BoilerDataMixin",
+    "PoweredShaftBlockEntityMixin"
   ],
   "client": [
-    "BlazeBurnerVisualMixin"
+    "BlazeBurnerVisualMixin",
+    "BlazeBurnerRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
