@@ -4,12 +4,9 @@
     "gravis_stuff:gravis_alloy_block",
     "gravis_stuff:gravis_casing",
     "gravis_stuff:gravis_tank",
-    "gravis_stuff:ruptured_fluid_tank",
-    "gravis_stuff:ruptured_pipe",
     "gravis_stuff:magma_de_toba",
     "gravis_stuff:masa_de_toba",
     "gravis_stuff:masa_de_toba_fria",
-    "gravis_stuff:masa_de_toba_densa",
-    "gravis_stuff:toba_sintetica"
+    "gravis_stuff:masa_de_toba_densa"
   ]
 }
