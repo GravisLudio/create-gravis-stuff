@@ -4,20 +4,24 @@
   "processing_time": 250,
   "results": [
     {
-      "chance": 0.5,
-      "id": "minecraft:flint"
-    },
-    {
       "chance": 0.25,
-      "id": "minecraft:copper_nugget"
-    },
-    {
-      "chance": 0.2,
-      "id": "minecraft:iron_nugget"
+      "id": "minecraft:flint"
     },
     {
       "chance": 0.1,
       "id": "minecraft:gold_nugget"
+    },
+    {
+      "chance": 0.1,
+      "id": "minecraft:copper_nugget"
+    },
+    {
+      "chance": 0.1,
+      "id": "create:zinc_nugget"
+    },
+    {
+      "chance": 0.1,
+      "id": "minecraft:iron_nugget"
     }
   ]
 }
