@@ -3,15 +3,9 @@
   "package": "net.gravis.stuff.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "BlazeBurnerBlockEntityMixin",
-    "BoilerDataMixin",
-    "PoweredShaftBlockEntityMixin"
-  ],
-  "client": [
-    "BlazeBurnerVisualMixin",
-    "BlazeBurnerRendererMixin"
+    "PolymerIngredientExtensionMixin"
   ],
   "injectors": {
-    "defaultRequire": 1
+    "defaultRequire": 0
   }
 }
